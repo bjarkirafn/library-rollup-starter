@@ -4,7 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint \"./src/**/*.{js,ts,tsx}\"",
+    "lint:fix": "npm run lint -- --fix"
+  },
+  "husky":{
+    "hooks":{
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged":{
+    "*.js": ["npm run lint:fix", "git add"]
   },
   "repository": {
     "type": "git",
@@ -16,5 +25,17 @@
   "bugs": {
     "url": "https://github.com/bjarkirafn/library-rollup-starter/issues"
   },
-  "homepage": "https://github.com/bjarkirafn/library-rollup-starter#readme"
+  "homepage": "https://github.com/bjarkirafn/library-rollup-starter#readme",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.1.5",
+    "prettier-eslint": "^9.0.1",
+    "prettier-eslint-cli": "^5.0.0"
+  }
 }
