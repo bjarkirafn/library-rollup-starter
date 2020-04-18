@@ -1,6 +1,3 @@
-console
-  .log(
-    'hello' +
-  'there' +
-  'you'
-  )
+const func = () => {}
+
+export default func
