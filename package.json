@@ -1,0 +1,20 @@
+{
+  "name": "library-rollup-starter",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bjarkirafn/library-rollup-starter.git"
+  },
+  "keywords": [],
+  "author": "bjarkirafn <bjarkirafn@gmail.com> (https://github.com/bjarkirafn)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bjarkirafn/library-rollup-starter/issues"
+  },
+  "homepage": "https://github.com/bjarkirafn/library-rollup-starter#readme"
+}
