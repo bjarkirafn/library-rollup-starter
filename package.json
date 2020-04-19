@@ -9,11 +9,24 @@
     "prebuild": "rimraf dist/**/*",
     "build": "rollup -c",
     "postbuild": "copyfiles ./dist/* ./library-rollup-starter/",
-    "lint": "eslint \"./src/**/*.js\"",
+    "lint": "eslint '**/*.{js,ts,tsx}'",
+    "lint:fix": "npm run lint -- --fix",
     "storybook": "start-storybook -p 9001 -c storybook",
     "storybook:build": "build-storybook -c storybook",
     "test": "jest",
+    "test:staged": "jest --findRelatedTests",
     "test:watch": "jest --watch"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "npm run lint:fix",
+      "npm run test:staged"
+    ]
   },
   "repository": {
     "type": "git",
@@ -43,6 +56,8 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-standard": "^4.0.1",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.1.5",
     "prettier": "^2.0.4",
     "prettier-eslint": "^9.0.1",
     "prettier-eslint-cli": "^5.0.0",
