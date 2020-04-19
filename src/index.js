@@ -1,3 +1,3 @@
-const func = () => {}
-
-export default func
+export * from './components/Ripple'
+export * from './components/Ring'
+export * from './components/Ellipsis'

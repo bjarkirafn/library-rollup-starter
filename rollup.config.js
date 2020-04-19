@@ -1,8 +1,9 @@
 import babel from 'rollup-plugin-babel'
 import resolve from '@rollup/plugin-node-resolve'
+import { string } from 'rollup-plugin-string'
 import { terser } from 'rollup-plugin-terser'
 
-import pkg from './package.json'
+// import pkg from './package.json'
 
 const prefix = 'dist/bundle'
 
@@ -20,18 +21,21 @@ export default {
       format: 'esm'
     },
     {
-      name: pkg.name,
+      name: 'libraryRollupStarter',
       file: `${prefix}.umd.js`,
-      format: 'umd',
       globals: {
         react: 'React'
-      }
+      },
+      format: 'umd'
     }
   ],
   plugins: [
     resolve(),
     babel({
       exclude: 'node_modules/**'
+    }),
+    string({
+      include: '**/*.css'
     }),
     production && terser()
   ],
