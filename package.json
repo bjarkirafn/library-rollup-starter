@@ -11,9 +11,10 @@
     "postbuild": "copyfiles ./dist/* ./library-rollup-starter/",
     "lint": "eslint \"./src/**/*.js\"",
     "storybook": "start-storybook -p 9001 -c storybook",
-    "storybook:build": "build-storybook -c storybook"
+    "storybook:build": "build-storybook -c storybook",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
-
   "repository": {
     "type": "git",
     "url": "https://github.com/bjarkirafn/library-rollup-starter.git"
@@ -42,13 +43,12 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-standard": "^4.0.1",
-    "husky": "^4.2.5",
-    "lint-staged": "^10.1.5",
     "prettier": "^2.0.4",
     "prettier-eslint": "^9.0.1",
     "prettier-eslint-cli": "^5.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-test-renderer": "^16.13.1",
     "rimraf": "^3.0.2",
     "rollup": "^2.6.1",
     "rollup-plugin-babel": "^4.4.0",
@@ -57,5 +57,10 @@
   },
   "peerDependencies": {
     "react": ">=16.1"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.css": "<rootDir>/mocks/styles.js"
+    }
   }
 }
