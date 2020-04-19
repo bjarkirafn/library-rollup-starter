@@ -1,5 +1,5 @@
 import React from 'react'
-import { Ellipsis, Ring, Ripple  } from 'library-rollup-starter'
+import { Ellipsis, Ring, Ripple } from 'library-rollup-starter'
 
 const App = props => (
   <>

@@ -9,7 +9,7 @@
     "prebuild": "rimraf dist/**/*",
     "build": "rollup -c",
     "postbuild": "copyfiles ./dist/* ./library-rollup-starter/",
-    "lint": "eslint '**/*.{js,ts,tsx}'",
+    "lint": "eslint \"./**/*.js\"",
     "lint:fix": "npm run lint -- --fix",
     "storybook": "start-storybook -p 9001 -c storybook",
     "storybook:build": "build-storybook -c storybook",
